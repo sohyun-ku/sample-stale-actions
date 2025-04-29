@@ -1,8 +1,7 @@
 name: "Close stale issues and PRs"
 on:
   schedule:
-    - cron: '0 6 * * *'
-  workflow_dispatch:
+    - cron: '0 6 * * 1'
 
 jobs:
   stale:
@@ -11,12 +10,12 @@ jobs:
       - uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-issue-message: "이 이슈는 최근 활동이 없어 stale로 표시됩니다."
-          close-issue-message: "이 이슈는 활동이 없어 자동으로 닫힙니다."
-          days-before-stale: 0
-          days-before-close: 0
+          stale-issue-message: "This issue has been marked with the stale label due to a lack of recent activity.If no further updates are made within 7 days, it will be automatically closed."
+          stale-pr-message: "This PR has been marked with the stale label due to a lack of recent activity.If no further updates are made within 7 days, it will be automatically closed."
+          days-before-stale: 60
+          days-before-close: 7
           stale-issue-labels: "stale"
           stale-pr-labels: "stale"
-          exempt-issue-labels: "bug, enhancement, do-not-stale"
-          exempt-pr-labels: "bug, enhancement, do-not-stale"
+          exempt-issue-labels: "bug,enhancement,do-not-stale"
+          exempt-pr-labels: "bug,enhancement,do-not-stale"
           exempt-pr-assignees: "sohyun-ku"
