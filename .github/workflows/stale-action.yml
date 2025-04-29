@@ -15,6 +15,8 @@ jobs:
           close-issue-message: "이 이슈는 활동이 없어 자동으로 닫힙니다."
           days-before-stale: 0
           days-before-close: 0
+          stale-issue-labels: "stale"
+          stale-pr-labels: "stale"
           exempt-issue-labels: "bug, enhancement, do-not-stale"
           exempt-pr-labels: "bug, enhancement, do-not-stale"
           exempt-pr-assignees: "sohyun-ku"
